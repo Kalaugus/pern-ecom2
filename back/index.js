@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const  pool  = require('./db').default;
+const  pool  = require('./db');
 const bcrypt = require('bcrypt');
+
+
 
 
 PORT = process.env.PORT || 54321
