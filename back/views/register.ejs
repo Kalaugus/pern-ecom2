@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>register</h1>
+    <% if (typeof message != 'undefined'){ %>
+        <p><%= message %></p>
+    <% } %>
+
+
+    <form action="/user/register" method="POST">
+        <div>
+            <input 
+                type="text" 
+                name="name" 
+                id="name" 
+                placeholder="name"
+                required>
+        </div>
+        <div>
+            <input 
+                type="email" 
+                name="email" 
+                id="email"
+                placeholder="email">
+        </div>
+        <div>
+            <input 
+                type="password" 
+                name="password" 
+                id="password"
+                placeholder="password">
+        </div>
+        <div>
+            <input 
+                type="password"
+                name="password2" 
+                id="password2"
+                placeholder="retype password">
+        </div>
+        <input type="submit" value="register">
+        
+    </form>
+    <a href='./login'> Welcome Back. Login.</a>
+    
+</body>
+</html>
