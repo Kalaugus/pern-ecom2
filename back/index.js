@@ -107,7 +107,7 @@ app.get('/user/dash', async(req, res) => {
 } ); 
 app.get('/user/logout', (req, res) => {
     
-    res.render('logout');});
+    res.render('logout',{user: 'loser'});});
 
 
  
