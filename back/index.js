@@ -4,9 +4,7 @@ const  pool  = require('./db');
 const bcrypt = require('bcrypt');
 
 
-
-
-PORT = process.env.PORT || 54321
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
@@ -30,7 +28,7 @@ app.post('/user/register', async(req, res) => {
     
         try {
             let user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
-            console.log(user.rows);
+             console.log(user.rows);
     
             if (user.rows.length > 0) {
                 return res.render('register', {
@@ -48,7 +46,7 @@ app.post('/user/register', async(req, res) => {
             );
             res.redirect('login');
         } catch (err) {
-            res.redirect('register', { message: err });
+            res.render('register', { message: err });
             console.error(err.message);
         
         }
@@ -64,6 +62,7 @@ app.post('/user/login', async(req, res) => {
             password
         });
         try {
+            console.log('User is logging in');
             let user = await pool.query("SELECT * FROM users WHERE email = $1", [email]);
             console.log(user.rows);
     
@@ -111,7 +110,6 @@ app.get('/user/logout', (req, res) => {
     res.render('logout');});
 
 
- 
  
 
 

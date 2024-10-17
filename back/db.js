@@ -1,18 +1,23 @@
-require('dotenv').config();
+// Initiate the connection to the database
 
+// Import the required modules
 const { Pool } = require('pg');
 
-const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_DATABASE } = process.env;
+
+
+
+
+
 
 
 
 
 const pool = new Pool({
-    user: DB_USER,
-    password: DB_PASSWORD,
-    host: DB_HOST,
-    port: DB_PORT,
-    database: DB_DATABASE
+    user  :   'postgres',
+    password: 'Monkies90',
+    host:   'localhost',
+    db_port:   5432,
+    database: 'postgres'
 });
 
 
