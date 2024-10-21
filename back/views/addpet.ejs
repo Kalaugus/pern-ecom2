@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add new pet</title>
+</head>
+<body>
+    <h1>Add new pet</h1>
+    <% if (typeof message != 'undefined'){ %>
+        <p><%= message %></p>
+    <% } %>
+    
+    <form action="/pet/add" method="POST">
+        <div>
+            <input 
+                type="text" 
+                name="name" 
+                id="name"
+                placeholder="name">
+        </div>
+        <div>
+            <input 
+                type="text" 
+                name="type" 
+                id="type"
+                placeholder="type">
+        </div>
+        <div>
+            <input 
+                type="text" 
+                name="breed" 
+                id="breed"
+                placeholder="breed">
+        </div>
+        <div>
+            <input 
+                type="text" 
+                name="age" 
+                id="age"
+                placeholder="age">
+        </div>
+        <input type="submit" value="Add pet">
+    </form>
+    <a href=''> Back to dash</a>
+</html>

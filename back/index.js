@@ -79,7 +79,7 @@ app.post('/user/login', async(req, res) => {
     
             if (isMatch) {   
                 let auth = true;
-                res.render('dash', {auth: auth,id: user.rows[0].id,user: user.rows[0].name});
+                res.render('dash',{auth: auth,id: user.rows[0].id,user: user.rows[0].name});
                 console.log('User is logged in');             
 
             } else {
@@ -108,6 +108,14 @@ app.get('/user/dash', async(req, res) => {
 app.get('/user/logout', (req, res) => {
     
     res.render('logout',{user: 'loser'});});
+
+app.get ('/user/addpet', (req, res) => { 
+    res.render('addpet',);}
+);
+
+
+
+    
 
 
  
